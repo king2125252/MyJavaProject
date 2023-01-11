@@ -26,7 +26,7 @@
 	<h3>新增地點</h3>
 	<form method="post" action="loc.do" enctype="multipart/form-data">
 		<label>地點名稱 : </label>
-		<input type="text" name="loc_name" maxlength="15" value="<%= (locVO == null)? "" : locVO.getLocName() %>"><br>
+		<input type="text" name="loc_name" maxlength="15"><br>
 		
 		<label>經度 : </label>
 		<input type="text" name="longitude" maxlength="30"><br>

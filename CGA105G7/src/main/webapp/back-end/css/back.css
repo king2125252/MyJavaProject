@@ -176,7 +176,6 @@
       justify-content: center;
       position: absolute;
       top: var(--head-height);
-      z-index: 1;
       text-align: center;
       justify-content: space-between;
 
