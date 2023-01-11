@@ -1,6 +1,11 @@
+<%@page import="com.location.model.LocationVO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
+<% 
+	LocationVO locVO = (LocationVO)request.getAttribute("locVO");
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +26,7 @@
 	<h3>新增地點</h3>
 	<form method="post" action="loc.do" enctype="multipart/form-data">
 		<label>地點名稱 : </label>
-		<input type="text" name="loc_name" maxlength="15"><br>
+		<input type="text" name="loc_name" maxlength="15" value="<%= (locVO == null)? "" : locVO.getLocName() %>"><br>
 		
 		<label>經度 : </label>
 		<input type="text" name="longitude" maxlength="30"><br>
@@ -36,7 +41,7 @@
 		<input type="text" name="phone" maxlength="15"><br>
 		
 		<label>地點圖片 : </label>
-		<input type="file" name="loc_pic" accept="image/*"><br>
+		<input type="file" name="loc_pic" accept=".jpg,.png,.jpeg"><br>
 		
 		
 		<input type="hidden" name="action" value="insert">

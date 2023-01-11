@@ -75,7 +75,7 @@ public class LocationServlet extends HttpServlet {
 //					完成新增準備轉交
 			String url = "";
 			RequestDispatcher successView = req.getRequestDispatcher(url);
-			successView.forward(req, res);
+//			successView.forward(req, res);
 
 		}
 
