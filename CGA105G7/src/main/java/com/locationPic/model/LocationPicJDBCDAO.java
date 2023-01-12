@@ -29,7 +29,7 @@ public class LocationPicJDBCDAO implements LocationPicDAO_interface{
 			pstmt = con.prepareStatement(INSERT_STMT);
 			
 			pstmt.setInt(1, locationPicVO.getLocId());
-			pstmt.setBytes(2, locationPicVO.getLocPic());
+			pstmt.setObject(2, locationPicVO.getLocPic());
 			pstmt.executeUpdate();
 			// Handle any driver errors
 		} catch (ClassNotFoundException e) {
@@ -57,6 +57,29 @@ public class LocationPicJDBCDAO implements LocationPicDAO_interface{
 		
 	}
 
+	@Override
+	public void insertHasPic(LocationPicVO locationPicVO, Connection con) {
+		PreparedStatement pstmt = null;
+		
+		try {
+			Class.forName(driver);
+			pstmt = con.prepareStatement(INSERT_STMT);
+			
+			pstmt.setInt(1, locationPicVO.getLocId());
+			pstmt.setBytes(2, locationPicVO.getLocPic());
+			pstmt.executeUpdate();
+			// Handle any driver errors
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException("Couldn't load database driver. "+ e.getMessage());
+			// Handle any SQL errors
+		}catch (SQLException se) {
+			throw new RuntimeException("A database error occured. "+ se.getMessage());
+			// Clean up JDBC resources
+		}
+		
+	}
+
+	
 	@Override
 	public void delete(Integer locPicId) {
 		Connection con = null;
@@ -155,28 +178,6 @@ public class LocationPicJDBCDAO implements LocationPicDAO_interface{
 			}
 		}
 		return locationPicVO;
-	}
-	
-	@Override
-	public void insert2(LocationPicVO locationPicVO, Connection con) {
-		PreparedStatement pstmt = null;
-		
-		try {
-			Class.forName(driver);
-			pstmt = con.prepareStatement(INSERT_STMT);
-			
-			pstmt.setInt(1, locationPicVO.getLocId());
-			pstmt.setBytes(2, locationPicVO.getLocPic());
-			pstmt.executeUpdate();
-			// Handle any driver errors
-		} catch (ClassNotFoundException e) {
-			throw new RuntimeException("Couldn't load database driver. "+ e.getMessage());
-			// Handle any SQL errors
-		}catch (SQLException se) {
-			throw new RuntimeException("A database error occured. "+ se.getMessage());
-			// Clean up JDBC resources
-		}
-		
 	}
 
 

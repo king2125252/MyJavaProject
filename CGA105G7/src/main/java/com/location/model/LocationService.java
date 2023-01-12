@@ -1,5 +1,8 @@
 package com.location.model;
+import java.util.Collection;
+import java.util.List;
 
+import javax.servlet.http.Part;
 public class LocationService {
 	private LocationDAO_interface dao;
 	
@@ -8,7 +11,7 @@ public class LocationService {
 	}
 	
 	public LocationVO addLoc(String locName, String longitude, String latitude, String locAddresss,
-			String locPhone,byte[] pic) {
+			String locPhone,Collection<Part> pic) {
 		
 		LocationVO locVO = new LocationVO();
 		locVO.setUserId(1);
@@ -17,8 +20,14 @@ public class LocationService {
 		locVO.setLatitude(latitude);
 		locVO.setLocAddress(locAddresss);
 		locVO.setLocPhone(locPhone);
-		dao.insert2(locVO, pic);
+		dao.insertHasPic(locVO, pic);
 		
 		return locVO;
 	}
+	
+	public List<LocationVO> getAll(){
+		return dao.getAll();
+	}
+	
+	
 }

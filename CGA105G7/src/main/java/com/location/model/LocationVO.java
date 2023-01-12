@@ -12,7 +12,7 @@ public class LocationVO implements Serializable{
 	private String Latitude;
 	private String locAddress;
 	private String locPhone;
-	private Integer locUpdate;
+	private Integer locStatus;
 	
 	
 	public Integer getLocId() {
@@ -57,10 +57,10 @@ public class LocationVO implements Serializable{
 	public void setLocPhone(String locPhone) {
 		this.locPhone = locPhone;
 	}
-	public Integer getLocUpdate() {
-		return locUpdate;
+	public Integer getLocStatus() {
+		return locStatus;
 	}
-	public void setLocUpdate(Integer locUpdate) {
-		this.locUpdate = locUpdate;
+	public void setLocStatus(Integer locStatus) {
+		this.locStatus = locStatus;
 	}
 }
