@@ -29,7 +29,7 @@ public class LocationPicJDBCDAO implements LocationPicDAO_interface{
 			pstmt = con.prepareStatement(INSERT_STMT);
 			
 			pstmt.setInt(1, locationPicVO.getLocId());
-			pstmt.setObject(2, locationPicVO.getLocPic());
+			pstmt.setBytes(2, locationPicVO.getLocPic());
 			pstmt.executeUpdate();
 			// Handle any driver errors
 		} catch (ClassNotFoundException e) {
@@ -181,23 +181,4 @@ public class LocationPicJDBCDAO implements LocationPicDAO_interface{
 	}
 
 
-//	public static void main(String[] args) {
-//		LocationPicJDBCDAO dao = new LocationPicJDBCDAO();
-		
-		//insert
-//		LocationPicVO locP = new LocationPicVO();
-//		locP.setLocId(2);
-//		locP.setLocPic(null);
-//		dao.insert(locP);
-		
-		//delete
-//		dao.delete(2);
-		
-		//query
-//		LocationPicVO locP1 = dao.findByForeignKey(1);
-//		System.out.print(locP1.getLocPicId()+", ");
-//		System.out.print(locP1.getLocId()+", ");
-//		System.out.println(locP1.getLocPic());
-//		System.out.println("------------------------------");
-//	}
 }

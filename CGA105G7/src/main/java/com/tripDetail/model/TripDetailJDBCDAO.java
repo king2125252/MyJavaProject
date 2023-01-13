@@ -24,6 +24,7 @@ public class TripDetailJDBCDAO implements TripDetailDAO_interface{
 			"SELECT TRIP_DETAIL_ID,TRIP_ID,LOC_ID,ARRIVAL_TIME,LEAVE_TIME FROM trip_detail where TRIP_DETAIL_ID = ?";
 	private static final String GET_ALL_STMT = 
 			"SELECT TRIP_DETAIL_ID,TRIP_ID,LOC_ID,ARRIVAL_TIME,LEAVE_TIME FROM trip_detail order by TRIP_DETAIL_ID";
+	
 	@Override
 	public void insert(TripDetailVO tripDetailVO) {
 		Connection con = null;
@@ -105,8 +106,6 @@ public class TripDetailJDBCDAO implements TripDetailDAO_interface{
 		}
 	}
 		
-	
-
 	@Override
 	public void delete(Integer tripDetailId) {
 		Connection con = null;
@@ -148,8 +147,6 @@ public class TripDetailJDBCDAO implements TripDetailDAO_interface{
 			}
 		}
 	}
-		
-	
 
 	@Override
 	public TripDetailVO findByPrimaryKey(Integer tripDetailId) {
@@ -272,48 +269,7 @@ public class TripDetailJDBCDAO implements TripDetailDAO_interface{
 		}
 		return list;
 	}
-	public static void main(String[] args) {
-		TripDetailJDBCDAO dao = new TripDetailJDBCDAO();
-		
-		//insert
-//		TripDetailVO tD1 = new TripDetailVO();
-//		tD1.setTripId(10);
-//		tD1.setLocId(2);
-//		tD1.setArrivalTime(java.sql.Timestamp.valueOf("2022-11-5 23:55:50"));
-//		tD1.setLeaveTime(java.sql.Timestamp.valueOf("2022-12-08 12:55:50"));
-//		dao.insert(tD1);
-		
-		//update
-//		TripDetailVO tD2 = new TripDetailVO();
-//		tD2.setTripDatailId(2);
-//		tD2.setTripId(9);
-//		tD2.setLocId(1);
-//		tD2.setArrivalTime(java.sql.Timestamp.valueOf("2022-11-5 23:55:50"));
-//		tD2.setLeaveTime(java.sql.Timestamp.valueOf("2022-12-08 12:55:50"));
-//		dao.update(tD2);
-		
-		//delete
-//		dao.delete(3);
-		
-		//query
-//		TripDetailVO tD3 = dao.findByPrimaryKey(1);
-//		System.out.print(tD3.getTripDatailId()+", ");
-//		System.out.print(tD3.getTripId()+", ");
-//		System.out.print(tD3.getLocId()+", ");
-//		System.out.print(tD3.getArrivalTime()+", ");
-//		System.out.println(tD3.getLeaveTime());
-//		System.out.println("---------------------------------");
-		
-		//queryAll
-//		List<TripDetailVO> list = dao.getAll();
-//		for(TripDetailVO tD4 : list) {
-//			System.out.print(tD4.getTripDatailId()+", ");
-//			System.out.print(tD4.getTripId()+", ");
-//			System.out.print(tD4.getLocId()+", ");
-//			System.out.print(tD4.getArrivalTime()+", ");
-//			System.out.println(tD4.getLeaveTime());
-//			System.out.println("---------------------------------");
-//		}
-	}
+	
+	
 
 }

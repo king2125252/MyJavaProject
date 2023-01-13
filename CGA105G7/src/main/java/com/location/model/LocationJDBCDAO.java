@@ -23,10 +23,11 @@ public class LocationJDBCDAO implements LocationDAO_interface {
 	String passwd = "King297145";
 
 	private static final String INSERT_STMT = "INSERT INTO location (USER_ID,LOC_NAME,LONGITUDE,LATITUDE,LOC_ADDRESS,LOC_PHONE) VALUES (?,?,?,?,?,?)";
-	private static final String UPDATE = "UPDATE location set USER_ID=?, LOC_NAME=?, LONGITUDE=?, LATITUDE=?, LOC_ADDRESS=?,LOC_PHONE=?,LOC_UPDATE=? where LOC_ID = ?";
+	private static final String UPDATE = "UPDATE location set USER_ID=?, LOC_NAME=?, LONGITUDE=?, LATITUDE=?, LOC_ADDRESS=?,LOC_PHONE=?,LOC_STATUS=? where LOC_ID = ?";
 	private static final String DELETE = "DELETE FROM location where LOC_ID = ?";
 	private static final String GET_ONE_STMT = "SELECT LOC_ID,USER_ID,LOC_NAME,LONGITUDE,LATITUDE,LOC_ADDRESS,LOC_PHONE,LOC_STATUS FROM location where LOC_ID = ?";
 	private static final String GET_ALL_STMT = "SELECT LOC_ID,USER_ID,LOC_NAME,LONGITUDE,LATITUDE,LOC_ADDRESS,LOC_PHONE,LOC_STATUS FROM location order by LOC_ID";
+	private static final String SEARCH_ADDRESS ="SELECT LOC_ID,USER_ID,LOC_NAME,LONGITUDE,LATITUDE,LOC_ADDRESS,LOC_PHONE,LOC_STATUS FROM location where LOC_ADDRESS like ?";
 
 	@Override
 	public void insert(LocationVO locationVO) {
@@ -170,7 +171,7 @@ public class LocationJDBCDAO implements LocationDAO_interface {
 			con = DriverManager.getConnection(url, userid, passwd);
 			pstmt = con.prepareStatement(UPDATE);
 
-			pstmt.setObject(1, locationVO.getUserId());
+			pstmt.setInt(1, locationVO.getUserId());
 			pstmt.setString(2, locationVO.getLocName());
 			pstmt.setString(3, locationVO.getLongitude());
 			pstmt.setString(4, locationVO.getLatitude());
@@ -271,7 +272,7 @@ public class LocationJDBCDAO implements LocationDAO_interface {
 				locationVO.setLatitude(rs.getString("LATITUDE"));
 				locationVO.setLocAddress(rs.getString("LOC_ADDRESS"));
 				locationVO.setLocPhone(rs.getString("LOC_PHONE"));
-				locationVO.setLocStatus(rs.getInt("LOC_UPDATE"));
+				locationVO.setLocStatus(rs.getInt("LOC_STATUS"));
 			}
 
 			// Handle any driver errors
@@ -321,6 +322,70 @@ public class LocationJDBCDAO implements LocationDAO_interface {
 			Class.forName(driver);
 			con = DriverManager.getConnection(url, userid, passwd);
 			pstmt = con.prepareStatement(GET_ALL_STMT);
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				locationVO = new LocationVO();
+				locationVO.setLocId(rs.getInt("LOC_ID"));
+				locationVO.setUserId(rs.getInt("USER_ID"));
+				locationVO.setLocName(rs.getString("LOC_NAME"));
+				locationVO.setLongitude(rs.getString("LONGITUDE"));
+				locationVO.setLatitude(rs.getString("LATITUDE"));
+				locationVO.setLocAddress(rs.getString("LOC_ADDRESS"));
+				locationVO.setLocPhone(rs.getString("LOC_PHONE"));
+				locationVO.setLocStatus(rs.getInt("LOC_STATUS"));
+
+				list.add(locationVO); // Store the row in the list
+			}
+
+			// Handle any driver errors
+		} catch (ClassNotFoundException e) {
+			throw new RuntimeException("Couldn't load database driver. " + e.getMessage());
+			// Handle any SQL errors
+		} catch (SQLException se) {
+			throw new RuntimeException("A database error occured. " + se.getMessage());
+			// Clean up JDBC resources
+		} finally {
+			if (rs != null) {
+				try {
+					rs.close();
+				} catch (SQLException se) {
+					se.printStackTrace(System.err);
+				}
+			}
+			if (pstmt != null) {
+				try {
+					pstmt.close();
+				} catch (SQLException se) {
+					se.printStackTrace(System.err);
+				}
+			}
+			if (con != null) {
+				try {
+					con.close();
+				} catch (Exception e) {
+					e.printStackTrace(System.err);
+				}
+			}
+		}
+		return list;
+	}
+	
+	@Override
+	public List<LocationVO> getForAddress(String Address){
+		List<LocationVO> list = new ArrayList<LocationVO>();
+		LocationVO locationVO = null;
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+
+			Class.forName(driver);
+			con = DriverManager.getConnection(url, userid, passwd);
+			pstmt = con.prepareStatement(SEARCH_ADDRESS);
+			pstmt.setString(1, Address);
 			rs = pstmt.executeQuery();
 
 			while (rs.next()) {

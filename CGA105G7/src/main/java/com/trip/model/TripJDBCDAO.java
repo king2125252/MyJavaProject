@@ -275,53 +275,6 @@ public class TripJDBCDAO implements TripDAO_interface{
 		return list;
 	}
 	
-	public static void main(String[] args) {
-		TripJDBCDAO dao = new TripJDBCDAO();
-		
-		//insert
-//		TripVO tripVO1 = new TripVO();
-//		tripVO1.setTripName("Z003");
-//		tripVO1.setStartDate(java.sql.Date.valueOf("2022-12-10"));
-//		tripVO1.setEndDate(java.sql.Date.valueOf("2022-12-20"));
-//		tripVO1.setCoverPic(new byte[0]);
-//		tripVO1.setNotes("Test03");
-//		dao.insert(tripVO1);
-		
-		//update
-//		TripVO tripVO2 = new TripVO();
-//		tripVO2.setTripId(10);
-//		tripVO2.setTripName("Z002");
-//		tripVO2.setStartDate(java.sql.Date.valueOf("2022-12-26"));
-//		tripVO2.setEndDate(java.sql.Date.valueOf("2022-12-28"));
-//		tripVO2.setCoverPic(new byte[0]);
-//		tripVO2.setNotes("Test0201");
-//		dao.update(tripVO2);
-		
-		//delete
-//		dao.delete(8);
-		
-		//query
-//		TripVO tripVO3 = dao.findByPrimaryKey(9);
-//		System.out.print(tripVO3.getTripId() + ", ");
-//		System.out.print(tripVO3.getTripName() + ", ");
-//		System.out.print(tripVO3.getStartDate()+ ", ");
-//		System.out.print(tripVO3.getEndDate()+ ", ");
-//		System.out.print(tripVO3.getCoverPic() + ", ");
-//		System.out.println(tripVO3.getNotes());
-//		System.out.println("-------------------------------");
-		
-		//queryAll
-//		List<TripVO> list = dao.getAll();
-//		for(TripVO trip : list) {
-//			System.out.print(trip.getTripId() + ", ");
-//			System.out.print(trip.getTripName() + ", ");
-//			System.out.print(trip.getStartDate()+ ", ");
-//			System.out.print(trip.getEndDate()+ ", ");
-//			System.out.print(trip.getCoverPic() + ", ");
-//			System.out.println(trip.getNotes());
-//			System.out.println("-------------------------------");
-//		}
-		
-	}
+	
 
 }

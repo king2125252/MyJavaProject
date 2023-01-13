@@ -203,34 +203,6 @@ public class TripMemberJDBCDAO implements TripMemberDAO_interface{
 		}
 		return tripMemberVO;
 	}
-	public static void main(String[] args) {
-		TripMemberJDBCDAO dao = new TripMemberJDBCDAO();
-		
-		//insert
-		TripMemberVO tm1 = new TripMemberVO();
-		tm1.setTripId(11);
-		tm1.setUserId(4);
-		tm1.setIsMbr(true);
-		dao.insert(tm1);
-		
-		//update
-//		TripMemberVO tm2 = new TripMemberVO();
-//		tm2.setTripId(10);
-//		tm2.setUserId(3);
-//		tm2.setIsMbr(9);
-//		tm2.setTripMbrId(6);
-//		dao.update(tm2);
-		
-		//delete
-//		dao.delete(6);
-		
-		//query
-//		TripMemberVO tm3 = dao.findByTripId(9);
-//		System.out.print(tm3.getTripMbrId()+", ");
-//		System.out.print(tm3.getTripId()+", ");
-//		System.out.print(tm3.getUserId()+", ");
-//		System.out.println(tm3.getIsMbr());
-//		System.out.println("-----------------------------------");
-	}
+	
 
 }
