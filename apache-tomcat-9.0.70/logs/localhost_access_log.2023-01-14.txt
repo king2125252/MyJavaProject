@@ -1,0 +1,11 @@
+127.0.0.1 - - [14/Jan/2023:10:02:25 +0800] "GET / HTTP/1.1" 200 11428
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:02:26 +0800] "GET /CGA105G7/back-end/Location/locManage.jsp HTTP/1.1" 200 21361
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:02:26 +0800] "GET /CGA105G7/back-end/css/back.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:02:26 +0800] "GET /CGA105G7/back-end/css/listAllLoc.css HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:02:27 +0800] "GET /CGA105G7/back-end/images/logo.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:02:27 +0800] "GET /CGA105G7/back-end/js/Loc.js HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:02:27 +0800] "GET /CGA105G7/back-end/images/JavaTime.png HTTP/1.1" 304 -
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:02:45 +0800] "POST /CGA105G7/back-end/Location/loc.do HTTP/1.1" 200 5964
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:02:51 +0800] "POST /CGA105G7/back-end/Location/loc.do HTTP/1.1" 200 5964
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:03:25 +0800] "POST /CGA105G7/back-end/Location/loc.do HTTP/1.1" 200 5855
+0:0:0:0:0:0:0:1 - - [14/Jan/2023:10:03:31 +0800] "POST /CGA105G7/back-end/Location/loc.do HTTP/1.1" 200 21364
