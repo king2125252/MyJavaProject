@@ -1,0 +1,35 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>新增景點 addLoc</title>
+</head>
+<body>
+	<h3>地點新增 - addLoc.jsp</h3>
+	<h3>新增地點</h3>
+	<form method="post" action="loc.do" enctype="multipart/form-data">
+		<label>景點名稱 : </label>
+		<input type="text" name="loc_name"><br>
+		
+		<label>經度 : </label>
+		<input type="text" name="longitude"><br>
+		
+		<label>緯度 : </label>
+		<input type="text" name="latitude"><br>
+		
+		<label>地址 : </label>
+		<input type="text" name="address"><br>
+		
+		<label>電話 : </label>
+		<input type="text" name="phone"><br>
+		
+		<label>地點圖片 : </label>
+		<input type="file" name="loc_pic"><br>
+		
+		
+		<input type="hidden" name="action" value="insert" accept=".png,.jpg,.jpeg">
+		<input type="submit" value="送出新增">
+	</form>
+</body>
+</html>

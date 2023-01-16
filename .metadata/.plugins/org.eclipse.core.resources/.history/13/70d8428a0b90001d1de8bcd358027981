@@ -1,0 +1,5 @@
+package com.tripMember.model;
+
+public class TripMemberJDBCDAO {
+
+}

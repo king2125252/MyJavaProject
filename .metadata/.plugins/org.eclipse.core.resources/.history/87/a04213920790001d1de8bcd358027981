@@ -1,0 +1,5 @@
+package com.locationPic.model;
+
+public class LocationPicVO {
+
+}

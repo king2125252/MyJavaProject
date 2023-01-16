@@ -1,0 +1,5 @@
+package com.tripDetail.model;
+
+public class TripDetailService {
+
+}
