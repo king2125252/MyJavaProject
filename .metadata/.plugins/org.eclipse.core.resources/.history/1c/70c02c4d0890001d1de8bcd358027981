@@ -1,5 +1,0 @@
-package com.trip.model;
-
-public interface TripDAO_interface {
-
-}

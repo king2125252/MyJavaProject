@@ -1,5 +1,0 @@
-package com.locationPic.model;
-
-public interface LocationPicDAO_interface {
-
-}

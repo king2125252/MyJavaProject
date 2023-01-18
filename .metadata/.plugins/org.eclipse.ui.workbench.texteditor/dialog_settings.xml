@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="sear"/>
 			<item value="userId"/>
 			<item value="locid"/>
 			<item value="System"/>
@@ -15,12 +16,6 @@
 			<item value="edit"/>
 			<item value="input"/>
 			<item value="include"/>
-			<item value="table"/>
-			<item value="#8b9bb1"/>
-			<item value="hover"/>
-			<item value="img"/>
-			<item value="index"/>
-			<item value="z-index"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
