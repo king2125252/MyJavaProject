@@ -17,6 +17,11 @@ import com.location.model.LocationVO;
 @MultipartConfig(fileSizeThreshold = 1024 * 1024, maxFileSize = 5 * 1024 * 1024, maxRequestSize = 5 * 5 * 1024 * 1024)
 public class LocationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	
+	public void doGet(HttpServletRequest req, HttpServletResponse res)
+			throws ServletException, IOException {
+		doPost(req, res);
+	}
 
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 
@@ -57,14 +62,17 @@ public class LocationServlet extends HttpServlet {
 			// 開始查詢資料
 			LocationService locSrv = new LocationService();
 			LocationVO locVO = locSrv.getOneLoc(locId);
+			req.setAttribute("locVO", locVO);//資料庫取出的locVO物件，存入req
+			
+			Boolean openModal = true;
+			req.setAttribute("openModal", openModal);
 
 			// 查詢完成準備轉交
-			req.setAttribute("locVO", locVO);
-			String url = "/back-end/Location/editLoc.jsp";
+			String url = "/back-end/Location/locManage.jsp";
 			req.getRequestDispatcher(url).forward(req, res);
 		}
 
-		if ("update".equals(action)) { // 來自update_emp_input.jsp的請求
+		if ("update".equals(action)) { // 來自listOneLoc.jsp的請求
 			
 			/*************************** 1.接收請求參數 **********************/
 			Integer locId = Integer.valueOf(req.getParameter("locId"));
@@ -98,7 +106,7 @@ public class LocationServlet extends HttpServlet {
 		if("search".equals(action)) {
 			String searchWord = "%"+req.getParameter("word")+"%";
 			LocationService locSvc = new LocationService();
-			List<LocationVO> list = locSvc.getForAddress(searchWord);
+			List<LocationVO> list = locSvc.getForLocation(searchWord);
 			
 //			req.setAttribute("list", list);
 			req.getSession().setAttribute("list", list);  

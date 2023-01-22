@@ -48,10 +48,10 @@
     <fullyQualifiedTypeName name="javax.xml.crypto.dsig.keyinfo.RetrievalMethod"/>
     <fullyQualifiedTypeName name="com.tripMember.model.TripMemberService"/>
     <fullyQualifiedTypeName name="com.tripMember.model.TripMemberJDBCDAO"/>
-    <fullyQualifiedTypeName name="java.lang.Boolean"/>
     <fullyQualifiedTypeName name="com.trip.model.TripVO"/>
     <fullyQualifiedTypeName name="com.tripMember.model.TripMemberDAO_interface"/>
     <fullyQualifiedTypeName name="com.tripMember.model.TripMemberVO"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
     <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="java.lang.Boolean"/>
 </qualifiedTypeNameHistroy>

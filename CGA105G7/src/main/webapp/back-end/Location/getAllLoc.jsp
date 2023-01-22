@@ -10,7 +10,7 @@ List<LocationVO> list = locSvc.getAll();
 pageContext.setAttribute("list", list);
 %>
 
-<table class="table">
+<table class="table" id="loctable">
 	<thead>
 		<tr>
 			<th scope="col">景點名稱</th>
@@ -26,27 +26,22 @@ pageContext.setAttribute("list", list);
 
 		<c:forEach var="locVO" items="${list}">
 			<tr class="align-middle">
-				<td>${locVO.getLocName()}</td>
-				<td>${locVO.getLocAddress()}</td>
-				<td>${locVO.getLocPhone() == null? "查無資料" : locVO.getLocPhone()}</td>
-				<td>${locVO.getLocStatus() == 0? "上架" : "未上架"}</td>
+				<td>${locVO.locName}</td>
+				<td>${locVO.locAddress}</td>
+				<td>${locVO.locPhone == null? "查無資料" : locVO.locPhone}</td>
+				<td>${locVO.locStatus == 0? "上架" : "未上架"}</td>
 				<td>
-					<form method="post" action="">
+
 						<input type="hidden" name="action" value="getOne_For_Update">
 						<input type="hidden" name="LOC_ID" value="${locVO.getLocId()}">
 
 
 						<button class="btn btn-primary py-1 px-2" data-bs-toggle="modal"
 							data-bs-target="#updatePic">預覽編輯圖片</button>
-					</form>
 				</td>
 				<td>
-					<form method="post" action="loc.do">
-						<input type="hidden" name="action" value="getOne_For_Update">
-						<input type="hidden" name="LOC_ID" value="${locVO.getLocId()}">
-						<button class="btn btn-primary py-1 px-2" data-bs-toggle="modal"
-							data-bs-target="#update">編輯</button>
-					</form>
+
+							<a href="loc.do?LOC_ID=${locVO.locId}&action=getOne_For_Update" class="btn btn-primary py-1 px-2">編輯</a>
 				</td>
 			</tr>
 		</c:forEach>
@@ -54,3 +49,9 @@ pageContext.setAttribute("list", list);
 	</tbody>
 </table>
 
+	  <!-- 編輯 modal content start -->
+	  <c:if test="${ openModal != null }">
+      <%@ include file="updateLoc.jsp" %>
+      <!-- 編輯 modal content end -->
+	  </c:if>
+	  

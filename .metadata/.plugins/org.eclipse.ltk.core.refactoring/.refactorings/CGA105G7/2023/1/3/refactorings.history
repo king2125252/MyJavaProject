@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;CGA105G7/src/main/webapp/back-end/Location/listOneLoc.jsp&apos; to &apos;updateLoc.jsp&apos;" description="Rename resource &apos;listOneLoc.jsp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/webapp/back-end/Location/listOneLoc.jsp" name="updateLoc.jsp" stamp="1674283763355" updateReferences="true"/>
+</session>
