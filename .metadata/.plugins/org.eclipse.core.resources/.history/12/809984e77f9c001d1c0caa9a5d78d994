@@ -1,0 +1,5 @@
+package com.locationPic.controller;
+
+public class LocationPicServlet {
+
+}
