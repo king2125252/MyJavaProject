@@ -1,26 +1,47 @@
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
-  <%if (rowsPerPage<rowNumber) {%>
-    <%if(pageIndex>=rowsPerPage){%>
-        <A href="<%=request.getRequestURI()%>?whichPage=1">至第一頁</A>&nbsp;
-        <A href="<%=request.getRequestURI()%>?whichPage=<%=whichPage-1%>">上一頁 </A>&nbsp;
-    <%}%>
-  
-    <%if(pageIndex<pageIndexArray[pageNumber-1]){%>
-        <A href="<%=request.getRequestURI()%>?whichPage=<%=whichPage+1%>">下一頁 </A>&nbsp;
-        <A href="<%=request.getRequestURI()%>?whichPage=<%=pageNumber%>">至最後一頁</A>&nbsp;
-    <%}%>
-  <%}%>  
+<div class="container">
+<div class="row">
+<p class="col text-start">總資料筆數: 共<font color=red><%=rowNumber%></font>筆</p>
 
-<br><br>
-
-  <%if (pageNumber>1) {%>
-    <FORM METHOD="post" ACTION="<%=request.getRequestURI()%>">   
-       <select size="1" name="whichPage">
-         <%for (int i=1; i<=pageNumber; i++){%>
-            <option value="<%=i%>">跳至第<%=i%>頁
-         <%}%> 
-       </select>
-       <input type="submit" value="確定" >  
-    </FORM>
+  <nav class="col-auto">
+  <ul class="pagination">
+  <% String firstPage="disabled";
+  if(pageIndex>=rowsPerPage){
+  	firstPage="";
+  }%>  
+    <li class="page-item <%=firstPage%>">
+      <a class="page-link" href="<%=request.getRequestURI()%>?whichPage=1">&laquo;</a>
+    </li>
+    
+    <%if(whichPage != 1){%> <!-- 檢查如果是第一頁則不用顯示 -->
+     <li class="page-item">
+    	<a class="page-link" href="<%=request.getRequestURI()%>?whichPage=<%=whichPage-1%>"><%=whichPage-1%></a>
+    </li>
+    <%}%>
+    
+  <%if (pageNumber>0){%><!-- 顯示當前的頁數 -->
+    <li class="page-item active">
+    	<a class="page-link"><%=whichPage%></a>
+    </li>
   <%}%>
+    
+    
+    <%if(whichPage != pageNumber){%> <!-- 檢查如果是最後一頁，則不用顯示 -->
+     <li class="page-item">
+    	<a class="page-link" href="<%=request.getRequestURI()%>?whichPage=<%=whichPage+1%>"><%=whichPage+1%></a>
+    </li>
+    <%}%>
+    
+    
+    <% String lastPage ="disabled";
+    if(pageIndex<pageIndexArray[pageNumber-1]){
+    	lastPage = "";
+    }%>
+    <li class="page-item <%=lastPage%>">
+      <a class="page-link" href="<%=request.getRequestURI()%>?whichPage=<%=pageNumber%>">&raquo;</a>
+    </li>
+  </ul>
+</nav>
+</div>
+</div>
