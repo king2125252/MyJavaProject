@@ -1,3 +1,4 @@
 #Tomcat publish data
-#Thu Jan 26 23:39:43 CST 2023
+#Sat Jan 28 23:27:42 CST 2023
+org.eclipse.jst.jee.server\:CGA105G7_front=C\:\\Users\\Tibame_T14\\Documents\\myproject\\apache-tomcat-9.0.70\\webapps\\CGA105G7_front
 org.eclipse.jst.jee.server\:CGA105G7=C\:\\Users\\Tibame_T14\\Documents\\myproject\\apache-tomcat-9.0.70\\webapps\\CGA105G7
