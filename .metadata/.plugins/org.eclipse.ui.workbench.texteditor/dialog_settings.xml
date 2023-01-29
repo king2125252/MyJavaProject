@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="會員照片"/>
+		<item key="selection" value="notes"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="notes"/>
+			<item value="NOTES"/>
 			<item value="會員照片"/>
 			<item value="max"/>
 			<item value="Connector"/>
 			<item value="openModal"/>
 			<item value="include"/>
 			<item value="URI"/>
-			<item value="pageIndex"/>
-			<item value="form"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
