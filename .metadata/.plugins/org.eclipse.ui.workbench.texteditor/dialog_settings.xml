@@ -8,14 +8,14 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="form"/>
+			<item value="leaf"/>
+			<item value="delete-tripLoc"/>
 			<item value="custom-Loc"/>
 			<item value="custom-loc"/>
 			<item value="預計"/>
 			<item value="isEmp"/>
 			<item value="notes"/>
-			<item value="NOTES"/>
-			<item value="會員照片"/>
-			<item value="max"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
