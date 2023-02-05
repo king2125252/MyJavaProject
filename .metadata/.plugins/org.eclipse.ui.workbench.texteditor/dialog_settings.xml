@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="console"/>
+		<item key="selection" value="userMarker"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="updateMap"/>
+			<item value="getTripDetailAjax"/>
+			<item value="addTripLoc"/>
+			<item value="locInfo"/>
+			<item value="picControl-0"/>
 			<item value="ajax"/>
 			<item value="getOneLoc"/>
 			<item value="custom-loc"/>
-			<item value="img"/>
-			<item value="exampleModal"/>
-			<item value="刪除我的地點"/>
-			<item value="刪除景點"/>
-			<item value="刪除當天行程"/>
 		</list>
 		<list key="replacehistory">
 			<item value=""/>
