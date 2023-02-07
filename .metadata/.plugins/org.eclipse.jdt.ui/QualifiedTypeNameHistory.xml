@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="javax.security.auth.message.callback.PrivateKeyCallback.Request"/>
-    <fullyQualifiedTypeName name="javax.servlet.RequestDispatcher"/>
-    <fullyQualifiedTypeName name="org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload"/>
-    <fullyQualifiedTypeName name="org.apache.tomcat.util.http.fileupload.disk.DiskFileItemFactory"/>
-    <fullyQualifiedTypeName name="org.apache.tomcat.util.http.fileupload.FileItem"/>
-    <fullyQualifiedTypeName name="com.locationPic.model.LocationPicJDBCDAO"/>
-    <fullyQualifiedTypeName name="com.trip.model.TripDAO_interface"/>
-    <fullyQualifiedTypeName name="com.trip.model.TripJDBCDAO"/>
-    <fullyQualifiedTypeName name="com.tripDetail.model.TripDetailDAO_interface"/>
     <fullyQualifiedTypeName name="com.tripDetail.model.TripDetailJDBCDAO"/>
     <fullyQualifiedTypeName name="javax.xml.crypto.dsig.keyinfo.RetrievalMethod"/>
     <fullyQualifiedTypeName name="com.tripMember.model.TripMemberDAO_interface"/>
@@ -41,12 +32,9 @@
     <fullyQualifiedTypeName name="com.tripDetail.model.TripDetailVO"/>
     <fullyQualifiedTypeName name="com.tripDetail.controller.tripDetailServlet"/>
     <fullyQualifiedTypeName name="java.util.Base64.Encoder"/>
-    <fullyQualifiedTypeName name="com.location.model.LocationService"/>
     <fullyQualifiedTypeName name="com.location.model.LocationVO"/>
-    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.util.Base64"/>
     <fullyQualifiedTypeName name="java.lang.Object"/>
-    <fullyQualifiedTypeName name="java.lang.Integer"/>
     <fullyQualifiedTypeName name="javax.sound.midi.Soundbank"/>
     <fullyQualifiedTypeName name="com.locationPic.model.LocationPicService"/>
     <fullyQualifiedTypeName name="com.locationPic.model.LocationPicVO"/>
@@ -57,7 +45,19 @@
     <fullyQualifiedTypeName name="java.util.Collection"/>
     <fullyQualifiedTypeName name="java.util.ArrayList"/>
     <fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
-    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
     <fullyQualifiedTypeName name="java.lang.String"/>
+    <fullyQualifiedTypeName name="com.location.model.LocationService"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
     <fullyQualifiedTypeName name="java.io.PrintWriter"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
+    <fullyQualifiedTypeName name="java.lang.Integer"/>
+    <fullyQualifiedTypeName name="javax.websocket.server.ServerEndpoint"/>
+    <fullyQualifiedTypeName name="javax.websocket.OnOpen"/>
+    <fullyQualifiedTypeName name="javax.websocket.OnClose"/>
+    <fullyQualifiedTypeName name="javax.websocket.OnMessage"/>
+    <fullyQualifiedTypeName name="javax.websocket.OnError"/>
+    <fullyQualifiedTypeName name="javax.websocket.Session"/>
+    <fullyQualifiedTypeName name="java.util.Collections"/>
+    <fullyQualifiedTypeName name="java.util.HashSet"/>
+    <fullyQualifiedTypeName name="java.util.Set"/>
 </qualifiedTypeNameHistroy>
